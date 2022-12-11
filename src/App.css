@@ -1,38 +1,149 @@
 .App {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar {
+  flex: 35%;
+  background: rgb(4, 65, 40);
+  background: linear-gradient(197deg, rgb(4, 65, 40) 0%, rgb(4, 100, 63) 11%, rgba(0, 212, 255, 1) 100%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidebar .inputContainer {
   display: flex;
   flex-direction: column;
+  margin: 1rem auto;
+}
+
+.sidebar input {
+  width: 200px;
+  height: 40px;
+  border: none;
+  padding-left: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  margin: 1rem auto 0;
+
+}
+
+button {
+  height: 45px;
+  border: none;
+  margin: 1.625rem auto 0;
+  background-color: #222;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+button:hover,
+button:focus {
+  opacity: .75;
+}
+
+button.m-y-0 {
+  margin: 0;
+  margin-left: 8px;
+}
+
+button.complete-task {
+  background-color: rgb(25, 158, 107);
+  flex-basis: 10%;
+}
+
+.todoList {
+  flex: 65%;
+  width: 100%;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+  background-color: rgba(164, 231, 245, 0.295);
+  background-image: url(https://i.imgur.com/RFDuEkH.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+}
+
+.task {
+  width: 85%;
+  max-width: 700px;
+  height: 50px;
+  display: flex;
   color: white;
+  margin: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.task .content {
+  flex: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.task .content span {
+  display: grid;
+  place-items: center;
+  border: 1px solid white;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  border-right: none;
+  background: rgb(21, 37, 31);
+}
+
+.task button {
+  flex: 20%;
+  height: 100%;
+}
+
+span.task-name {
+  flex-basis: 70%;
+  place-items: inherit !important;
+  padding-left: 8px;
+}
+
+span.duedate {
+  flex-basis: 20%;
+}
+
+
+@media screen and (min-width: 1024px) {
+  .App {
+    flex-direction: row;
   }
 }
